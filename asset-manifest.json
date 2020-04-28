@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/haroldpinedar/Weather-App.git/static/css/main.28e20718.chunk.css",
+    "main.js": "/haroldpinedar/Weather-App.git/static/js/main.18a4a602.chunk.js",
+    "main.js.map": "/haroldpinedar/Weather-App.git/static/js/main.18a4a602.chunk.js.map",
+    "runtime-main.js": "/haroldpinedar/Weather-App.git/static/js/runtime-main.36b3d4a2.js",
+    "runtime-main.js.map": "/haroldpinedar/Weather-App.git/static/js/runtime-main.36b3d4a2.js.map",
+    "static/js/2.750b3503.chunk.js": "/haroldpinedar/Weather-App.git/static/js/2.750b3503.chunk.js",
+    "static/js/2.750b3503.chunk.js.map": "/haroldpinedar/Weather-App.git/static/js/2.750b3503.chunk.js.map",
+    "index.html": "/haroldpinedar/Weather-App.git/index.html",
+    "precache-manifest.fb1b2b750babfa60b905230cbaa17862.js": "/haroldpinedar/Weather-App.git/precache-manifest.fb1b2b750babfa60b905230cbaa17862.js",
+    "service-worker.js": "/haroldpinedar/Weather-App.git/service-worker.js",
+    "static/css/main.28e20718.chunk.css.map": "/haroldpinedar/Weather-App.git/static/css/main.28e20718.chunk.css.map",
+    "static/js/2.750b3503.chunk.js.LICENSE.txt": "/haroldpinedar/Weather-App.git/static/js/2.750b3503.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.36b3d4a2.js",
+    "static/js/2.750b3503.chunk.js",
+    "static/css/main.28e20718.chunk.css",
+    "static/js/main.18a4a602.chunk.js"
+  ]
+}
