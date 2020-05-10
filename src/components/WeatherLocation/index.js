@@ -19,16 +19,16 @@ class WeatherLocation extends Component {   //COMPONENTE GENEREAL DE WEATHER LOC
             city,
             data: null,
         };
-        console.log("Constructos");
+       
     }
 
     componentDidMount() {
-        console.log("componentDidMount");
+       
         this.handleUpdateClick();
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log("componentDidUpdate");
+        
     }
 
 
@@ -38,9 +38,9 @@ class WeatherLocation extends Component {   //COMPONENTE GENEREAL DE WEATHER LOC
             return resolve.json();
 
         }).then(data => {
-            console.log("Resultado del handleUpdateClick")
+           
             const newWeather = transformWeather(data);
-            console.log(newWeather);
+            
             // debugger;
             this.setState({
                 data: newWeather

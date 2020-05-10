@@ -1,8 +1,8 @@
 import React from 'react';
 import WeatherExtraInfo from './WeatherExtraInfo';
 import WeatherTemperature from '../WeatherData/WeatherTemperature';
-import './styles.css';
 import PropTypes from 'prop-types';
+import './styles.css';
 
 
 

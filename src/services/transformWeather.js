@@ -1,4 +1,8 @@
 import convert from 'convert-units'; // LIBRERIA PARA CONVERTIR GRADOS KELVIN - fahrenheit a celsius
+
+
+//CONSTANTES CON LOS ESTADOS DEL CLIMA
+
 import{
     SUN,
     CLOUD,
@@ -9,9 +13,12 @@ import{
  } from '../constants/weather';
 
 
+//FUNCION QUE RECIBE TEMPERATURA EN KELVIN Y RETURNA CELSIUS
+//Number(.toFixed(0)) PARA QUE MUESTRE 0 DECIMALS
+
 const getTemp = kelvin => {
-    return Number(convert(kelvin).from("K").to("C").toFixed(0));  //FUNCION QUE RECIBE TEMPERATURA EN KELVIN Y RETURNA CELSIUS
-                                                                  //Number(.toFixed(2)) PARA QUE SOLO MUESTRE 2 DECIMALES 
+    return Number(convert(kelvin).from("K").to("C").toFixed(0));  
+                                                                  
 }
 
 const  getWeatherState = weather => {
@@ -39,7 +46,7 @@ const transformWeather = weather_data => {
     const {humidity, temp} = weather_data.main;   
     const { speed } = weather_data.wind;
     const weatherState = getWeatherState(weather_data.weather[0]);
-    console.log(weather_data.weather)
+    
     const temperature = getTemp(temp);
 
     const data = {
