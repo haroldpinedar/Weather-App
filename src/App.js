@@ -1,74 +1,73 @@
-import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
-import { Grid, Col, Row } from 'react-flexbox-grid';
-import { createStore } from 'redux'
-import LocationList from './components/LocationList';
-import ForeCastExtended from './components/ForeCastExtended';
-import './App.css';
+import React, { Component } from "react";
+import Paper from "@material-ui/core/Paper";
+import AppBar from "@material-ui/core/AppBar";
+import Typography from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import { Grid, Col, Row } from "react-flexbox-grid";
+import { setCity } from "./action";
+import LocationList from "./components/LocationList";
+import ForeCastExtended from "./components/ForeCastExtended";
+import "./App.css";
+import { connect } from "react-redux";
 
 const cities = [
   "Santa Marta,Co",
   "Cali,CO",
   "Manizales,CO",
   "Ciudad de Mexico,MX",
- ]
+];
 
-const store = createStore(() => {},
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-const setCity = value => ({type: 'setCity', value});
-
-
-class App extends Component  {
-
+class App extends Component {
   constructor() {
     super();
     this.state = { city: null };
   }
 
-  handleSelectedLocation = city => {
-      this.setState({ city });
-      console.log(`handleSelectedLocation ${city}`);
-      
-      
-      store.dispatch(setCity(city));
-  }
+  handleSelectedLocation = (city) => {
+    this.setState({ city });
+    console.log(`handleSelectedLocation ${city}`);
+
+    this.props.setCity(city);
+  };
   render() {
-    const { city } = this.state
+    const { city } = this.state;
 
     return (
       <Grid>
         <Row>
-            <AppBar position='sticky'>
-              <Toolbar >
-                  <Typography variant="h6" color="inherit">
-                      Weather App
-                  </Typography>
-              </Toolbar>
-            </AppBar>
-        </Row>          
+          <AppBar position="sticky">
+            <Toolbar>
+              <Typography variant="h6" color="inherit">
+                Weather App
+              </Typography>
+            </Toolbar>
+          </AppBar>
+        </Row>
         <Row>
           <Col xs={12} md={6}>
-             <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}/>
+            <LocationList
+              cities={cities}
+              onSelectedLocation={this.handleSelectedLocation}
+            />
           </Col>
           <Col xs={12} md={6}>
-              <Paper elevation={4}>
-                  <div className="details">
-                      {
-                        city ?                        //OPERADOR TERNARIO
-                        <ForeCastExtended city={city} />:
-                        null
-                      }                      
-                  </div>
-              </Paper>              
+            <Paper elevation={4}>
+              <div className="details">
+                {city ? ( //OPERADOR TERNARIO
+                  <ForeCastExtended city={city} />
+                ) : null}
+              </div>
+            </Paper>
           </Col>
-        </Row>        
+        </Row>
       </Grid>
     );
   }
 }
 
-export default App;
+const mapDispatchToPropsActions = (dispatch) => ({
+  setCity: (value) => dispatch(setCity(value)),
+});
+const AppConected = connect(null, mapDispatchToPropsActions)(App);
+
+export default AppConected;
